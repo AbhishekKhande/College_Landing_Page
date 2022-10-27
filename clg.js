@@ -1,38 +1,60 @@
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".nav",{
+  y:500,
+  duration:2,
+  scrollTrigger:{
+    trigger:".slides",
+    start:"top 20%",
+    end:"top 50%",
+    scrub: 2,
+    //toggleActions:"restart pause resume complete",
+    markers:true
+
+
+  }
+}
+  
+)
 //intersection observer
 document.addEventListener('DOMContentLoaded',()=>{
-    let options={
-        root:null,
-        rootMargin:"-200px 0px 0px 0px",
-        threshold:0
-    }
-    
-    let observer = new IntersectionObserver(touching,options)
-    document.querySelectorAll(".on-screen").forEach(
-        divs=>observer.observe(divs)
 
-    )
-    
-    function touching(entries){
-        entries.forEach(entry=>
-            {
-                if(entry.isIntersecting)
-                {
-                    entry.target.classList.add("active")
-                }
-                // else{
-                //     entry.target.classList.remove("active")
-                // }    
 
-            }
-        )
+  let options={
+      root:null,
+      rootMargin:"-200px 0px 0px 0px",
+      threshold:0
+  }
+  
+  let observer = new IntersectionObserver(touching,options)
+  document.querySelectorAll(".on-screen").forEach(
+      divs=>observer.observe(divs)
 
-    }
+  )
+  
+  function touching(entries){
+      entries.forEach(entry=>
+          {
+              if(entry.intersectionRatio>0)
+              {   //console.log(entry);
+                  entry.target.classList.add("active")
+                 
+              }
+              else{
+                  entry.target.classList.remove("active")
+              }    
+
+          }
+      )
+
+  }
 })
 
 
 //'i' Button
 var info_btn=document.getElementById('info-btn');
 var card=document.querySelector('.card-info');
+var toggle3=false
 
 info_btn.addEventListener('click',()=>{
     toggle3=!toggle3; //true
@@ -122,37 +144,32 @@ const flag_list = [Flag1 ,Flag2 , Flag3 ,Flag4 ,Flag5 ,Flag6 ,Flag7 ,Flag8 ,Flag
 
 const sub_menu_items = [sub_menu1,sub_menu2,sub_menu3,sub_menu4,sub_menu5,sub_menu6,sub_menu7,sub_menu8,sub_menu9,sub_menu10,sub_menu11,sub_menu12,sub_menu13];
 
+
 item_list.forEach(ev => 
 {
  ev.addEventListener('click', BoxCreate);   
 });
 
 function BoxCreate(ev){
-    var num = ev.target.dataset.id ;
-    flag_list[num]=!flag_list[num];
-    division_list[num] = document.getElementById(`division${num}`).classList;
-    item_list[num]= document.getElementById(`item${num}`).classList;
-  if(flag_list[num] == true){
-    division_list[num].add('add');
-    item_list[num].add('item_add');
-    setTimeout(()=>{
-      sub_menu_items[num-1].classList.add('sub-menu-timer');
-    },700)
-  }
-  else{
-    sub_menu_items[num-1].classList.remove('sub-menu-timer');
-    setTimeout(()=>{
-      division_list[num].add('add_out');
-    },300)
-    setTimeout(()=>{
-        division_list[num].remove('add','add_out')
-        item_list[num].remove('item_add') 
-    },1000);
-   }
+  var num = ev.target.dataset.id ;
+  flag_list[num]=!flag_list[num];
+  division_list[num] = document.getElementById(`division${num}`).classList;
+  item_list[num]= document.getElementById(`item${num}`).classList;
+if(flag_list[num] == true){
+  division_list[num].add('add');
+  item_list[num].add('item_add');
+  setTimeout(()=>{
+    sub_menu_items[num-1].classList.add('sub-menu-timer');
+  },700)
 }
-
-
-
-
-
-
+else{
+  sub_menu_items[num-1].classList.remove('sub-menu-timer');
+  setTimeout(()=>{
+    division_list[num].add('add_out');
+  },300)
+  setTimeout(()=>{
+      division_list[num].remove('add','add_out')
+      item_list[num].remove('item_add') 
+  },1000);
+ }
+}

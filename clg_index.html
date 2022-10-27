@@ -2,34 +2,41 @@
 <html>
     <head>
         <link rel="stylesheet" href="clg_style.css">
-        <link rel="stylesheet" href="\fontawesome-free-6.2.0-web\css\all.min.css">
+        <!-- <link rel="stylesheet" href="\fontawesome-free-6.2.0-web\css\all.min.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
     </head>
     <body>
-        <div class="nav">
+        <!-- This is navigation bar -->
+        <div class="nav" id="nav-bar">
             <i class="fas fa-bars" id="btn"></i>
             <div class="nav-logo"></div>        
             <div class="info-container">
                 <i class="fa-solid fa-circle-info" id="info-btn"></i>
+                
                 <div class="card-info">
                     <p>Information</p>
                 </div>
+                
+              
             </div>
         </div>
-        <section class="slides">
+        <!-- slides -->
+        <div class="slides" id="sli">
             This is for slides
-        </section>
+        </div>
        
-        
-        <div class="container">
+        <!-- Tabs at right side of page -->
+        <!-- <div class="container">
             <div class="card">NAAC+ Acreeted</div>
             <div class="card">Aproved by AICTE</div>
             <div class="card">Affilated to SPPU</div>
-        </div>
+        </div> -->
+        <!-- this is menu -->
     <div id="menu1" class="menu">
         <div id="menu_item">
             <ul>
                 <i class="fa-solid fa-xmark" id="btn-close"></i>  
-                <li id="item1" class="item" data-id="1">About</li>
+                <li id="item1" class="item" data-id="1">About <i class="fa-solid fa-caret-down " id="tri1"></i></li>
                 <div id="division1" class="Division" >
                     <div id="submenu1" class="sub-menu">
                         <div class="sub-menu-1"><span>Founder AISSMS</span></div>
@@ -45,7 +52,7 @@
                         <div class="sub-menu-1"><span>Group of institutes</span></div>
                     </div>
                 </div>
-                <li id="item2" class="item"data-id="2">Academics</li>
+                <li id="item2" class="item"data-id="2">Academics  <i class="fa-solid fa-caret-down" id="tri2"></i></li>
                 <div id="division2" class="Division">
                     <div id="submenu2" class="sub-menu">
                         <div class="sub-menu-1"><span>Courses Offered</span></div>
@@ -141,10 +148,11 @@
                 <li id="item12" class="item"data-id="12">NAAC</li>
                 <div id="division12" class="Division"></div>
                 <li id="item13" class="item"data-id="13">Contact</li>
-                <div id="division13" class="Division"></div>
+            
             </ul>
         </div>
     </div>
+        <!-- The main content of body -->
         <div class="wrapper">
             <div class="on-screen courses">
                 <div class="courses-info"><a href="#">Courses offered </a>
@@ -181,6 +189,10 @@
             <div class="footer">Hey im a div</div>
          
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+
         <script src="clg.js"></script>
     </body>
 </html>
