@@ -1,45 +1,168 @@
+    
+    // var logo=document.querySelector(".nav-logo")
+    //taking reference
+    // var ref_point = document.getElementById('ref-point-0');
+    // var nav_ref_id = document.getElementById('ref-point-1');
+    // //boundingclients
+    // let ref_y = ref_point.getBoundingClientRect().y;  
+    // let tar_y = nav_ref_id.getBoundingClientRect().y;
+    // // console.log(ref_y,' ',tar_y)
+    // // final height 
+    // let t = ref_y + tar_y
+    // let t1 = ref_y - tar_y
+    // // console.log(t1,t);
+    // // console.log(actual_height);
+
+    // // t=88.5 =>shrink logo->left
+    // // background-color: yellow;
+    // // height: 6vw;
+    // // width: 25vw;
+    // // left: 10.5vw;
+    // // top: 8vw;
+    // // bottom: 0px;
+
+    // if(t >= 183 && t <= 331){
+    //     console.log(t);
+    //     // logo.style.height = `${15*t/(331.5)}vw`
+    //     // logo.style.left =  `${18.5*t/331.5}vw`    
+    //     // logo.style.width = `${50*t/(331.5)}vw`
+    //     // logo.style.top = `${1*t1/331.5}vw`;
+    //     // logo.style.top = `${6*t1/479.5}vw`;
+    //     // logo.style.top = `${1*t1/331.5}vw`;
+    //     // logo.style.
+    // }
+
+
 //intersection observer
 document.addEventListener('DOMContentLoaded',()=>{
-    let options={
-        root:null,
-        rootMargin:"-200px 0px 0px 0px",
-        threshold:0
-    }
-    
-    let observer = new IntersectionObserver(touching,options)
-    document.querySelectorAll(".on-screen").forEach(
-        divs=>observer.observe(divs)
+    gsap.registerPlugin(ScrollTrigger);
+    let logo=document.querySelector(".nav-logo");
+    let nav=document.getElementById("nav-bar");
 
-    )
-    
-    function touching(entries){
-        entries.forEach(entry=>
-            {
-                if(entry.isIntersecting)
-                {
-                    entry.target.classList.add("active")
-                }
-                // else{
-                //     entry.target.classList.remove("active")
-                // }    
-
+    gsap.fromTo(logo,{
+        height: '15vw',
+        width:'50vw',
+        top:'0vw',
+        left: '18.5vw',
+    },
+    {
+        height: '5.5vw',
+        width:'20vw',
+        top:'9.5vw',
+        left: '9.5vw',
+        scrollTrigger: {
+            trigger: logo,
+            start: '10% top',
+            end: '140% 25%',
+            scrub: 0.5,
+            toggleActions: 'restart none none complete',
+        },   
+    })
+    gsap.fromTo(nav,
+    {
+        width:'100vw',
+        height: '15vw',
+    },
+    {
+        width:'100vw',
+        height:'5.5vw',
+        scrollTrigger:{
+            trigger: nav,
+            start: '10% top',
+            end: '140% 25%',
+            scrub: 0.5,
+            toggleActions: 'restart none none complete', 
+            markers: {
+                indent: -200,
+                position: 200,
             }
-        )
-
-    }
+        },
+    })
+    const nav_items_array = gsap.utils.toArray('.nav-items')
+    nav_items_array.forEach(nav_items_=>{
+    gsap.fromTo(nav_items_,
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1,
+            duration: 0.5,
+            scrollTrigger:
+            {
+                trigger: nav_items_,
+                start: '270% top',
+                end: '3000% 25%',
+                toggleClass: 'nav-show',
+                toggleActions: 'restart restart restart restart',
+            },
+    })  
+   })
 })
+    //     var slide=document.getElementById("sli");
+    //     let y_height = slide.getBoundingClientRect().top;
+    //     // console.log(y_height);
+    //     let options1={
+    //         root:null,
+    //         rootMargin:"-400px 0px 0px 0px",
+    //         threshold:0
+    //     }
+    
+    //     let observer1=new IntersectionObserver(function (el,observer1){
+            
+    //         el.forEach( item=>{
+
+    //             console.log(item);            
+    //         }
+    //         )
+    //     },options1)
+    // observer1.observe(slide); 
+
+    // let options2={
+    //     root:null,
+    //     rootMargin:"-200px 0px 0px 0px",
+    //     threshold:0
+    // }
+    
+    // let observer = new IntersectionObserver(touching,options2)
+    // document.querySelectorAll(".on-screen").forEach(
+    //     divs=>observer.observe(divs)
+
+    // )
+    
+    // function touching(entries){
+    //     entries.forEach(entry=>
+    //         {
+    //             if(entry.isIntersecting)
+    //             {
+    //                 entry.target.classList.add("active")
+    //             }
+    //             // else{
+    //             //     entry.target.classList.remove("active")
+    //             // }    
+
+    //         }
+    //     )
+
+    // }
+
 
 
 //'i' Button
-var info_btn=document.getElementById('info-btn');
-var card=document.querySelector('.card-info');
-
-info_btn.addEventListener('click',()=>{
-    toggle3=!toggle3; //true
-    card.classList.toggle('card-dis',toggle3);
-    console.log(toggle3);
-
-});
+// var info_btn=document.getElementById('info-btn');
+// var card=document.querySelector('.card-info');
+// var toggle3 = false;
+// info_btn.addEventListener('click',()=>{
+//     toggle3=!toggle3; 
+//     if(toggle3==true){
+//     card.classList.add('card-dis')
+//     }
+//     else{
+//         card.classList.add('card-dis-1')
+//         setTimeout(()=>{
+//             card.classList.remove('card-dis','card-dis-1')
+//         },5000)
+//     }
+// });
 //Menu-toggle
 
 const btn_burger = document.getElementById("btn");
@@ -50,11 +173,19 @@ var toggle1 = false;
 btn_burger.addEventListener('click', ()=>{
     toggle1=!toggle1;
     menu.classList.toggle('show',toggle1);
+    if(toggle1== true){
+        btn_close.style.position = 'fixed';
+        console.log(toggle1);
+    }
 })
 
 btn_close.addEventListener('click',()=>{
     toggle1=!toggle1;
     menu.classList.toggle('show',toggle1);
+    if(toggle1== false){
+        btn_close.style.position = 'absolute';
+        console.log(toggle1);
+    }
 });
 //DROP-DOWN-MENU
 const item1 = document.getElementById('item1');
@@ -150,9 +281,6 @@ function BoxCreate(ev){
     },1000);
    }
 }
-
-
-
-
-
-
+//Intersection Observer 
+//no u cannot have this pc
+//hello u mfs 
