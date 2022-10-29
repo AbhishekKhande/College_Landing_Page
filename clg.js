@@ -1,43 +1,11 @@
     
-    // var logo=document.querySelector(".nav-logo")
-    //taking reference
-    // var ref_point = document.getElementById('ref-point-0');
-    // var nav_ref_id = document.getElementById('ref-point-1');
-    // //boundingclients
-    // let ref_y = ref_point.getBoundingClientRect().y;  
-    // let tar_y = nav_ref_id.getBoundingClientRect().y;
-    // // console.log(ref_y,' ',tar_y)
-    // // final height 
-    // let t = ref_y + tar_y
-    // let t1 = ref_y - tar_y
-    // // console.log(t1,t);
-    // // console.log(actual_height);
-
-    // // t=88.5 =>shrink logo->left
-    // // background-color: yellow;
-    // // height: 6vw;
-    // // width: 25vw;
-    // // left: 10.5vw;
-    // // top: 8vw;
-    // // bottom: 0px;
-
-    // if(t >= 183 && t <= 331){
-    //     console.log(t);
-    //     // logo.style.height = `${15*t/(331.5)}vw`
-    //     // logo.style.left =  `${18.5*t/331.5}vw`    
-    //     // logo.style.width = `${50*t/(331.5)}vw`
-    //     // logo.style.top = `${1*t1/331.5}vw`;
-    //     // logo.style.top = `${6*t1/479.5}vw`;
-    //     // logo.style.top = `${1*t1/331.5}vw`;
-    //     // logo.style.
-    // }
-
-
-//intersection observer
 document.addEventListener('DOMContentLoaded',()=>{
     gsap.registerPlugin(ScrollTrigger);
     let logo=document.querySelector(".nav-logo");
     let nav=document.getElementById("nav-bar");
+    let vision=document.querySelector(".vision")
+    let para=document.querySelectorAll(".type")
+    let msg=document.querySelector(".msg")
 
     gsap.fromTo(logo,{
         height: '15vw',
@@ -48,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     {
         height: '5.5vw',
         width:'20vw',
-        top:'9.5vw',
+        //top:'9.5vw',
         left: '9.5vw',
         scrollTrigger: {
             trigger: logo,
@@ -72,10 +40,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             end: '140% 25%',
             scrub: 0.5,
             toggleActions: 'restart none none complete', 
-            markers: {
-                indent: -200,
-                position: 200,
-            }
+            //markers:true
         },
     })
     const nav_items_array = gsap.utils.toArray('.nav-items')
@@ -93,10 +58,77 @@ document.addEventListener('DOMContentLoaded',()=>{
                 start: '270% top',
                 end: '3000% 25%',
                 toggleClass: 'nav-show',
-                toggleActions: 'restart restart restart restart',
+                toggleActions: 'restart complete restart restart',
             },
     })  
    })
+//    gsap.fromTo(vision,{
+//         translateX:"-100%",
+//    },{
+//     translateX:'0%',
+//     duration:0.5,
+    
+//     scrollTrigger:{
+//         trigger:'.wrap',
+//         start:'top 60%',
+//         end:'bottom 80%',
+//         //markers:true,
+//     }
+//    })
+ 
+   let t1=gsap.timeline(
+    {
+        scrollTrigger:{
+            trigger:".warp",
+            start:"top 15%",
+            end:"bottom bottom",
+            pin:true,
+            pinSpacing:false,
+            scrub:true,
+            //markers:true,
+        }
+    }
+   )
+   t1.fromTo('.img-right',{
+    translateX:'100%',
+},
+{
+    translateX:'0%',
+    scrollTrigger:{
+        trigger:'.wrap',
+        start:'top 60%',
+        end:'bottom 80%',
+        // markers:true,
+    }
+
+},1).fromTo(".vision",{
+            translateX:"-100%",
+       },{
+        translateX:'0%',
+        duration:0.5,
+        
+        scrollTrigger:{
+            trigger:'.wrap',
+            start:'top 60%',
+            end:'bottom 80%',
+            markers:true,
+        }
+    })
+    // .fromTo(".mission",{
+    //             translateX:"-100%",
+    //        },{
+    //         translateX:'0%',
+    //         duration:0.5,
+            
+    //         scrollTrigger:{
+    //             trigger:'.wrap',
+    //             start:'top 60%',
+    //             end:'bottom 80%',
+    //             //markers:true,
+    //         }
+    // })
+
+
 })
     //     var slide=document.getElementById("sli");
     //     let y_height = slide.getBoundingClientRect().top;
