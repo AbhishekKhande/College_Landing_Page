@@ -3,6 +3,9 @@
     border: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 @font-face {
     
     font-family: Font1;
@@ -12,64 +15,52 @@
     font-family: Font2;
     src:url(font2.ttf);
 }
-
-.ref-point{
-    position: fixed;
-    z-index: 1000;
-    background-color: red;
-    height: 10px;
-    width: 10px;
-    top: 50%;
-    left: 50%;
-    bottom: 50%;
-    right: 50%;
+@font-face {
+    font-family:Font3 ;
+    src:url(/College_Landing_Page/Slabo27px-Regular.ttf);
 }
-#ref-point-1{
-    height: 1px;
-    background-color: red;
-}
-.nav{
-    background-color: white;
+.logo-rel{
+    height: 4.5vw;
     width: 100vw;
-    height: 15vw;
-    position: sticky;
     top: 0px;
-    box-shadow: rgba(255, 255, 255, 0.45) 0px 25px 20px -20px;
-    z-index: 100; 
+    position: sticky;
+    z-index: 1000;
+    opacity: 1;
+}
+.wrapper-times-6{
+    position: absolute;
+    height: 4.5vw;
+    width: 85vw;
+    left: 15vw;
+    top: 0vw;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    font-family: Font2;
-    opacity: 0.9;
- } 
- 
-.nav-items{
+    z-index: 1000;
+}
+.times-6{
     display: none;
-    background-color: rgb(98, 98, 172);
-    height: 5.5vw;
-    width: 13.4vw;
-    /* border: 0.1vw solid black; */
+    height: 4.5vw;
+    width: 14.17vw;
+    background-color: rgb(98, 98, 172); 
     text-transform: uppercase;
     font-size: 1.5vmin;
     font-size: 1vmax;
-    margin: auto;
     font-family: Font2;
     position: relative;
-} 
-.nav-items p{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    /* transform: scale(1); */
 }
-.nav-items:hover{
+.times-6:hover{
     cursor: pointer;
     background-color: rgb(180, 180, 180);
 }
-
-.nav-show{
+.times-6 p{
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.times-6-show{
     display: block;
 }
 .nav-logo{
@@ -77,84 +68,104 @@
     background-image: url('/aissmscoe.png') ;
     height: 15vw;
     width: 50vw;
-    left: 18.5vw;
+    left: 24.5vw;
     background-size:contain;
     background-repeat: no-repeat;
     border-radius: 0.3vw;
+    position: absolute;
+    z-index: 2000;
 }
-
-#info-btn{
-    font-size:25px;
-    top:10px;
-    float: right;
-    color: black;
-}
-.card-info{
-    height: 40px;
-    width: 80px;
-    border-top-right-radius: 13px;
-    background-color: rgb(116, 116, 116);
-    clip-path:circle(11px at 67px 14px);
-    animation-duration: 5000ms;  
-    animation-timing-function: cubic-bezier(0.53, 0.17, 0.34, 0.92);
-    /* animation: circular 5000ms ease-in-out ; */
-}
-.card-dis{
-    animation: circular 5000ms ease-in-out ;
-}
-.card-dis-1{
-    animation: circular-reverse 5000ms ease-in-out;
-}
-#info-btn:hover{
-    cursor: pointer;
-
-}
-@keyframes circular-reverse {
-    100%{
-        clip-path:circle(11px at 67px 14px);
-    }
-    75%{
-        clip-path:circle(100px at 50% 50%);
-    }
-    50%{
-        clip-path: circle(150px at 60% 90%);
-    }
-    0%{
-        clip-path:circle(100%);
-    }
-}
-@keyframes circular {
-    0%{
-        clip-path:circle(11px at 67px 14px);
-    }
-    50%{
-        clip-path:circle(100px at 50% 50%);
-    }
-    75%{
-        clip-path: circle(150px at 60% 90%);
-    }
-    100%{
-        height: 40px;
-        width:80px;
-    }
-}
-
 #btn{
-    right: 4rem;
-    top:20px;
-    position:fixed;
+    right: 4vw;
+    top: 1.5vw;
+    position: fixed;
     cursor: pointer;
-    font-size:25px;
-    z-index: 1000;
+    font-size: 1.5vw;
+    z-index: 5000;
 }
 #btn:hover{
     color:red;
 }
-.slides{
-    height: 65vh;
-    width:70vw;
-    background-color: skyblue;
-    margin:2.5rem;
+.dark-bg{
+    height:200vw;
+    width:100vw;
+    background-color:rgb(1, 1, 36);  
+    position: relative;
+    top: 10vw;
+}
+.msg{
+    color: white;
+    position: absolute;
+    width:100vw;
+    height:25vw;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #d4162f, #e34825, #ee6d19, #f48f0d, #f6b011);
+    -webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+
+}
+.msg p{
+    font-size:8vw;
+    
+    /* font-size:10vmax;
+    font-size: 10.5vmin; */
+    font-family:Font1;
+    text-align: center;
+    margin:10% auto;
+    width:fit-content;
+
+}
+
+.wrap{
+    display: flex;
+    position: relative;
+    top:30vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height:100vw;
+    width: 100vw;
+}
+.vision{
+    height: 10vw;
+    width: 70vw;
+    left:0vw;
+    position:absolute;
+    color: white;
+    background: rgb(255, 222, 156);
+    background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
+}
+.mission{
+    height: 35vw;
+    width: 70vw;
+    left:0vw;
+    position:inherit;
+    top: 11vw;
+    color: white;
+    background: rgb(236,163,21);
+    background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
+}
+.delay{
+    height: 0vw;
+    width: 70vw;
+    left:0vw;
+    position:inherit;
+    top: 1vw;
+    color: white;
+    background: rgb(236,163,21);
+    background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
+}
+
+.img-right{
+    height: 45vw;
+    width:30vw;
+    position:absolute;
+    /* float:right; */
+    right:0vw;
+   /* background-color: #d4162f  */
+    background:url('shahu2.png');
+    background-size:contain;
+    background-repeat: no-repeat;
 }
 .menu{
     font-size: 30px;
@@ -312,45 +323,7 @@
     transform: right 600ms ease-in;
     z-index: 1000;
 }
-.card{
-    position: absolute;
-    right:-20vw;
-    text-align: center;
-    padding:1.2rem; 
-    width:15vw;
-    height:fit-content;
-    background-color:white;
-    border-radius: 15px;
-    margin-bottom: 1.2rem;
-    box-shadow: rgb(214, 215, 216) 0px 20px 30px -10px;
-    animation: cards-move 1000ms ease forwards;
-}
-.card:nth-child(1){
-    top:30vh;
-    animation-delay:500ms;
 
-}
-.card:nth-child(2){
-    top:45vh;
-    animation-delay:1000ms;
-
-}
-.card:nth-child(3){
-    top:65vh;
-    animation-delay:1500ms;
-
-}
-
-@keyframes cards-move{
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(0);
-        right: 0vw;
-        margin-right: 1.2rem;
-    }
-}
 .wrapper{
 
     margin:1.5rem;
