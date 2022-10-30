@@ -5,17 +5,19 @@
     gsap.fromTo(logo,{
         translateX: '0vw',
         translateY: '0vw',
+        backgroundColor:'white',
         scale:1,
     },
     {
         translateX: '-42vw',
-        translateY: '-5vw',
+        translateY: '-5.3vw',
+        backgroundColor:'white',
         scale: 0.3,
         scrollTrigger: {
             trigger: logo,
             start: '2% top',
             end: '185% 31%',
-            scrub: 0.45,
+            scrub: 0.3,
             toggleActions: 'restart restart restart complete',
         },   
     })
@@ -31,7 +33,7 @@
             {
                 trigger: times_6,
                 start: '270% top',
-                end: '3000% 25%',
+                end: '6000% 25%',
                 toggleClass: 'times-6-show',
                 toggleActions: 'restart restart restart restart',
             },
@@ -42,13 +44,13 @@
 let t1=gsap.timeline(
     {
         scrollTrigger:{
-            trigger: document.querySelector('.wrap'),
-            start:"top 15%",
+            trigger:".wrap",
+            start:"top 12%",
             end:"bottom bottom",
             pin:true,
             pinSpacing:false,
             scrub:2,
-            markers:true,
+            //markers:true,
         }
     }
    )
@@ -89,23 +91,36 @@ t1.fromTo('.img-right',
     scrollTrigger:{
         trigger:'.wrap',
         start:'top 60%',
-        end:'bottom 80%',
-        // markers:true,
+        end:'bottom bottom',
+        //markers:true,
     }
 },2)
-.fromTo(".delay",{
-    translateX:"-100%",
-},{
-translateX:'0%',
-duration:0.5,
+// .fromTo(".delay",{
+//     translateX:"-100%",
+// },{
+// translateX:'0%',
+// duration:0.5,
 
-scrollTrigger:{
-    trigger:'.wrap',
-    start:'top 60%',
-    end:'bottom 80%',
-    // markers:true,
-}
-},3)
+// scrollTrigger:{
+//     trigger:'.wrap',
+//     start:'top 60%',
+//     end:'bottom 80%',
+//     // markers:true,
+// }
+// },3)
+// gsap.to(".carousel",{
+//     backgroundColor:'red',
+    
+//     scrollTrigger:{
+//         trigger:'.carousel',
+//         start:'top 12%',
+//         end:'100% bottom',
+//         pin:'.carousel',
+//         pinSpacing:false,
+//         scrub:true,
+//         markers:true
+//     }
+// })
 
 //Menu-toggle
 

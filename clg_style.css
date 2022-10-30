@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 @font-face {
     
@@ -65,7 +65,7 @@ body{
 }
 .nav-logo{
     display: inline-block;
-    background-image: url('/aissmscoe.png') ;
+    background-image: url('aissmscoe.png') ;
     height: 15vw;
     width: 50vw;
     left: 24.5vw;
@@ -87,11 +87,11 @@ body{
     color:red;
 }
 .dark-bg{
-    height:200vw;
+    height:79vw;
     width:100vw;
     background-color:rgb(1, 1, 36);  
     position: relative;
-    top: 10vw;
+    top: 11vw;
 }
 .msg{
     color: white;
@@ -123,7 +123,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height:100vw;
+    height:45vw;
     width: 100vw;
 }
 .vision{
@@ -166,6 +166,24 @@ body{
     background:url('shahu2.png');
     background-size:contain;
     background-repeat: no-repeat;
+}
+#arrow{
+    height:20px;
+    width:100px;
+    font-size: 1rem;
+    color:red;
+    position:relative;
+    top:11vw
+}
+.carousel{
+    background-color: #f48f0d;
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    right:-100vw;
+    top:12vw;
+    /* left:0px;
+    top:12vw; */
 }
 .menu{
     font-size: 30px;
