@@ -87,7 +87,7 @@ body{
     color:red;
 }
 .dark-bg{
-    height:200vw;
+    height:49vw;
     width:100vw;
     background-color:rgb(1, 1, 36);  
     position: relative;
@@ -102,33 +102,31 @@ body{
     background-image: linear-gradient(to right, #d4162f, #e34825, #ee6d19, #f48f0d, #f6b011);
     -webkit-background-clip:text;
 	-webkit-text-fill-color:transparent;
-
 }
 .msg p{
     font-size:8vw;
-    
     /* font-size:10vmax;
     font-size: 10.5vmin; */
     font-family:Font1;
     text-align: center;
     margin:10% auto;
     width:fit-content;
-
 }
 
 .wrap{
     display: flex;
-    position: relative;
+    position: absolute;
     top:30vw;
+    background-color: pink;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height:100vw;
-    width: 100vw;
+    height: 45vw;
+    width:100%;
 }
 .vision{
-    height: 10vw;
-    width: 70vw;
+    height: 23%;
+    width: 75vw;
     left:0vw;
     position:absolute;
     color: white;
@@ -136,10 +134,10 @@ body{
     background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
 }
 .mission{
-    height: 35vw;
-    width: 70vw;
+    height: 70%;
+    width: 75vw;
     left:0vw;
-    position:inherit;
+    position:absolute;
     top: 11vw;
     color: white;
     background: rgb(236,163,21);
@@ -147,7 +145,7 @@ body{
 }
 .delay{
     height: 0vw;
-    width: 70vw;
+    width: 75vw;
     left:0vw;
     position:inherit;
     top: 1vw;
@@ -158,15 +156,35 @@ body{
 
 .img-right{
     height: 45vw;
-    width:30vw;
+    width:25vw;
     position:absolute;
-    /* float:right; */
     right:0vw;
-   /* background-color: #d4162f  */
     background:url('shahu2.png');
     background-size:contain;
     background-repeat: no-repeat;
 }
+.vis-mission-header{
+    font-size: 2vw;
+    text-transform: uppercase;
+    overflow-wrap: normal;
+}
+.sub-headers{
+    font-size: 1.4vw;
+    width: fit-content;
+    overflow-wrap: normal;
+}
+.carousel{
+    height: 65vw;
+    width: 100vw;
+    position:absolute;
+    top: 75vw;
+    left: 0%;
+    color: white;
+    background: rgb(236,163,21);
+    background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
+}
+
+/* Menu */
 .menu{
     font-size: 30px;
     font-family: Font1;

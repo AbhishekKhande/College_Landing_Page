@@ -31,9 +31,11 @@
             {
                 trigger: times_6,
                 start: '270% top',
-                end: '3000% 25%',
+                end: '6000% 25%',
+                // endTrigger:'.dark-bg',
                 toggleClass: 'times-6-show',
                 toggleActions: 'restart restart restart restart',
+                // markers: true,
             },
     })  
    })
@@ -42,13 +44,13 @@
 let t1=gsap.timeline(
     {
         scrollTrigger:{
-            trigger: document.querySelector('.wrap'),
-            start:"top 15%",
-            end:"bottom bottom",
+            trigger: document.querySelector('.dark-bg'),
+            start:"top 12%",
+            end:"420% bottom",
             pin:true,
             pinSpacing:false,
-            scrub:2,
-            markers:true,
+            scrub:1.6,
+            // markers:true,
         }
     }
    )
@@ -66,7 +68,7 @@ t1.fromTo('.img-right',
         // markers:true,
     }
 
-})
+}, )
 .fromTo(".vision",{
             translateX:"-100%",
        },{
@@ -106,6 +108,21 @@ scrollTrigger:{
     // markers:true,
 }
 },3)
+// .fromTo('.carousel',{
+//     translateX:'-100vw',
+    
+// },
+// {
+//     translateX:'0vw',
+//     scrollTrigger:{
+//         trigger:'.carousel',
+//         start:'top 12%',
+//         end:'200% bottom',
+//         pin:true,   
+//         markers:true,
+//         scrub:0.3,
+//     }
+// },4)
 
 //Menu-toggle
 
