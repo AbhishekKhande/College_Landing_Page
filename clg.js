@@ -2,7 +2,7 @@
     let logo=document.querySelector(".nav-logo");
     let nav=document.getElementById("nav-bar");
     //Logo Animation
-    gsap.fromTo(logo,{
+gsap.fromTo(logo,{
         translateX: '0vw',
         translateY: '0vw',
         backgroundColor:'white',
@@ -33,9 +33,11 @@
             {
                 trigger: times_6,
                 start: '270% top',
-                end: '6000% 25%',
+                end:'20000% 25%',
+                // endTrigger:'.carousel',
                 toggleClass: 'times-6-show',
                 toggleActions: 'restart restart restart restart',
+                // markers:true,
             },
     })  
    })
@@ -44,13 +46,12 @@
 let t1=gsap.timeline(
     {
         scrollTrigger:{
-            trigger:".wrap",
-            start:"top 12%",
-            end:"bottom bottom",
+            trigger:".dark-bg",
+            start:"15% 9.5%",
+            end:"200% bottom",
             pin:true,
-            pinSpacing:false,
-            scrub:2,
-            //markers:true,
+            scrub:0.45,
+            // markers: true,
         }
     }
    )
@@ -61,66 +62,70 @@ t1.fromTo('.img-right',
 },
 {
     translateX:'0%',
-    scrollTrigger:{
-        trigger:'.wrap',
-        start:'top 60%',
-        end:'bottom 100%',
-        // markers:true,
-    }
-
 })
-.fromTo(".vision",{
-            translateX:"-100%",
-       },{
-        translateX:'0%',
-        duration:0.5,
-        
-        scrollTrigger:{
-            trigger:'.wrap',
-            start:'top 60%',
-            end:'bottom 80%',
-            // markers:true,
-        }
-    },1)
-.fromTo(".mission",{
-        translateX:"-100%",
-   },{
-    translateX:'0%',
-    duration:0.5,
-    
-    scrollTrigger:{
-        trigger:'.wrap',
-        start:'top 60%',
-        end:'bottom bottom',
-        //markers:true,
-    }
-},2)
-// .fromTo(".delay",{
-//     translateX:"-100%",
-// },{
-// translateX:'0%',
-// duration:0.5,
 
-// scrollTrigger:{
-//     trigger:'.wrap',
-//     start:'top 60%',
-//     end:'bottom 80%',
-//     // markers:true,
-// }
-// },3)
-// gsap.to(".carousel",{
-//     backgroundColor:'red',
-    
-//     scrollTrigger:{
-//         trigger:'.carousel',
-//         start:'top 12%',
-//         end:'100% bottom',
-//         pin:'.carousel',
-//         pinSpacing:false,
-//         scrub:true,
-//         markers:true
-//     }
-// })
+.fromTo(".vision",
+{
+    translateX:"-100%",
+},{
+    translateX:'0%',
+},1)
+
+.fromTo(".mission",
+{
+    translateX:"-100%",
+},
+{
+    translateX:'0%',
+    duration:1.5,
+},2)
+
+const checkout_tl = gsap.timeline({
+    scrollTrigger:{
+        trigger:'.dark-bg',
+        start:'37.5% 9%',
+        end:'200% bottom',
+        pin:true,
+        scrub:0.3,
+        markers:true,
+    }
+})
+
+checkout_tl.fromTo(".checkout-container",
+{
+    translateX:'-100vw',
+},
+{
+    translateX:'0vw',
+},0)
+.fromTo('.checkout',
+{
+    translateX:'-100vw',
+},
+{
+    translateX:'0vw',
+},1)
+.fromTo('.icon',
+{
+    translateX:'-100vw',
+},
+{
+    translateX:'0vw',
+},2)
+.fromTo('.icon',
+{
+    translateX:'0vw',
+},
+{
+    translateX:'80vw',
+},3)
+.fromTo('.icon-under',{
+    scaleX:0,
+},{
+    scaleX:1,
+},3)
+
+
 
 //Menu-toggle
 
