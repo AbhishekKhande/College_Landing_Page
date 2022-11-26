@@ -1,23 +1,24 @@
-    gsap.registerPlugin(ScrollTrigger);
-    let logo=document.querySelector(".nav-logo");
-    let nav=document.getElementById("nav-bar");
+gsap.registerPlugin(ScrollTrigger);
+let logo=document.querySelector(".nav-logo");
+let nav=document.getElementById("nav-bar");
     //Logo Animation
 gsap.fromTo(logo,{
-        translateX: '0vw',
+        translateX: '0vh',
         translateY: '0vw',
         backgroundColor:'white',
         scale:1,
     },
     {
-        translateX: '-42vw',
-        translateY: '-5.3vw',
+        translateX: '-41vw',
+        translateY: '-7.3vh',
         backgroundColor:'white',
-        scale: 0.3,
+        scale: 0.4,
         scrollTrigger: {
             trigger: logo,
             start: '2% top',
             end: '185% 31%',
             scrub: 0.3,
+            //markers:true,
             toggleActions: 'restart restart restart complete',
         },   
     })
@@ -33,11 +34,11 @@ gsap.fromTo(logo,{
             {
                 trigger: times_6,
                 start: '270% top',
-                end:'20000% 25%',
-                // endTrigger:'.carousel',
+                end:'200000% 100%',
+                // endTrigger:'.end',
                 toggleClass: 'times-6-show',
                 toggleActions: 'restart restart restart restart',
-                // markers:true,
+                //markers:true,
             },
     })  
    })
@@ -47,11 +48,15 @@ let t1=gsap.timeline(
     {
         scrollTrigger:{
             trigger:".dark-bg",
-            start:"15% 9.5%",
-            end:"200% bottom",
+            start:"10% 9.5%",
+            end:"80% bottom",
             pin:true,
-            scrub:0.45,
-            // markers: true,
+            pinSpacing:false,
+            scrub:true,
+            ease:'none',
+            //duration:2,
+            //toggleActions:'restart complete restart reverse',
+            //markers: true,
         }
     }
    )
@@ -67,26 +72,33 @@ t1.fromTo('.img-right',
 .fromTo(".vision",
 {
     translateX:"-100%",
+    opacity:0
 },{
     translateX:'0%',
+    opacity:1
 },1)
 
 .fromTo(".mission",
 {
     translateX:"-100%",
+    opacity:0
 },
 {
     translateX:'0%',
-    duration:1.5,
+    opacity:1,
+    //duration:1,
 },2)
 
-const checkout_tl = gsap.timeline({
-    scrollTrigger:{
+//checkout gallery 
+var checkout_tl = gsap.timeline({
+        scrollTrigger:{
         trigger:'.dark-bg',
-        start:'37.5% 9%',
-        end:'200% bottom',
+        start:'40% 20%',
+        end:'90% bottom',
         pin:true,
-        scrub:0.3,
+        pinSpacing:false,
+        //toggleActions:'restart complete restart complete',
+        scrub:true,
         markers:true,
     }
 })
@@ -94,9 +106,11 @@ const checkout_tl = gsap.timeline({
 checkout_tl.fromTo(".checkout-container",
 {
     translateX:'-100vw',
+    opacity:0
 },
 {
     translateX:'0vw',
+    opacity:1,
 },0)
 .fromTo('.checkout',
 {
@@ -125,10 +139,65 @@ checkout_tl.fromTo(".checkout-container",
     scaleX:1,
 },3)
 
+//the image slider 
+let container=document.querySelector('.carousel-container');
+var con=container.getBoundingClientRect().width;
+let img_length=document.querySelector('.img-slider');
+let image=gsap.utils.toArray('.img-slider');
+var ghost_t2=gsap.timeline();
+ghost_t2.to(image,{
+    xPercent: -85 * (image.length - 1),
+    scrollTrigger:{
+        trigger:'.dark-bg',
+        start:'70% 40%',
+        end: () => "+=" + container.offsetWidth + "px",
+        pin:true,
+        pinSpacing:false,
+        scrub:true,
+        markers:true
+    }
+})    
+
+// // for changing viewport 
+// const arrow=document.getElementById('arrow');
+// const cancel=document.getElementById('cancel');
+// let con=document.querySelector('.checkout-container');
+// let ghost=document.querySelector('.ghost');
+
+// function view()
+// {  
+//     document.body.classList.add('over');
+//     con.style.transform='translateX(-100%)';
+//     con.style.transition='transform 1000 ease';
+//     ghost.classList.add('ghost-show');
+ 
+// }
+// arrow.addEventListener('click',view);
+// // var ghost_t2=gsap.timeline();
+// // ghost_t2.to(image,{
+// //     xPercent: -85 * (image.length - 1),
+// //     scrollTrigger:{
+// //         trigger:'.carousel-container',
+// //         start:'0% top',
+// //         end:'4000% right',
+// //         pin:'.ghost',
+// //         pinSpacing:false,
+// //         markers:true,
+// //         scrub:true,
+ 
+// //      }
+// // })
+
+// cancel.addEventListener('click',()=>{
+
+//     con.style.transform='translateX(0%)';
+//     document.body.classList.remove('over');
+//     ghost.classList.remove('ghost-show');
+
+// })
 
 
 //Menu-toggle
-
 const btn_burger = document.getElementById("btn");
 const btn_close  = document.getElementById("btn-close");
 const menu = document.getElementById('menu1');
