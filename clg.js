@@ -51,7 +51,7 @@ let t1=gsap.timeline(
             start:"10% 9.5%",
             end:"80% bottom",
             pin:true,
-            pinSpacing:false,
+            //pinSpacing:false,
             scrub:true,
             ease:'none',
             //duration:2,
@@ -96,10 +96,10 @@ var checkout_tl = gsap.timeline({
         start:'40% 20%',
         end:'90% bottom',
         pin:true,
-        pinSpacing:false,
+       // pinSpacing:false,
         //toggleActions:'restart complete restart complete',
         scrub:true,
-        markers:true,
+        // markers:true,
     }
 })
 
@@ -145,18 +145,36 @@ var con=container.getBoundingClientRect().width;
 let img_length=document.querySelector('.img-slider');
 let image=gsap.utils.toArray('.img-slider');
 var ghost_t2=gsap.timeline();
-ghost_t2.to(image,{
-    xPercent: -85 * (image.length - 1),
+
+var ani=ghost_t2.to(image,{
+    xPercent: -100 * (image.length - 1),
     scrollTrigger:{
         trigger:'.dark-bg',
-        start:'70% 40%',
+        start:'70% 20%',
         end: () => "+=" + container.offsetWidth + "px",
         pin:true,
-        pinSpacing:false,
-        scrub:true,
-        markers:true
+        ease:"power.in",
+        scrub:0.1,
+        // markers:true
     }
-})    
+})
+
+ani.fromTo(".box1",{rotate:0},{rotate:360})
+// ani.to(".box1", {
+//     rotate:360,
+//     duration: 2,
+//     ease: "elastic",
+//     scrollTrigger: {
+//       trigger: ".box1",
+//       containerAnimation:ani,
+//       start: "left 30%",
+//       scrub:1,
+//       pin:true,
+//       markers:true
+//     }
+// });    
+
+
 
 // // for changing viewport 
 // const arrow=document.getElementById('arrow');
@@ -196,6 +214,113 @@ ghost_t2.to(image,{
 
 // })
 
+
+//this is for courses div
+var courses_t1=gsap.timeline({
+    // duration:10,
+    scrollTrigger:{
+        trigger:'.main-wrapper1',
+        start:"0% -10%",
+        end:"300% 100%",
+        markers:true,
+        pin:true,
+        ease:"power.in",
+        // toggleActions:"restart pause restart complete",
+        scrub:true
+    }
+})
+var wrap_div=document.querySelectorAll(".courses")
+
+
+courses_t1.fromTo('.wrap1',
+    {   opacity:0,
+        translateY:'500',
+    },
+    {   opacity:1,
+        translateY:'0'
+    })
+
+courses_t1.fromTo('.wrap5',
+{   opacity:0,
+    translateY:'500',
+},
+{   opacity:1,
+    translateY:'0'
+},1)
+
+courses_t1.fromTo('.wrap2',
+    {   
+        opacity:0,
+        translateY:'500',
+    },
+    {
+        translateY:'0',
+        opacity:1
+},2)
+courses_t1.fromTo('.wrap3',
+    {   
+        opacity:0,
+        translateX:'500',
+
+    },
+    {   
+        translateX:'0',
+        opacity:1
+    },2)
+courses_t1.fromTo('.wrap6',
+    {
+        translateY:'500',
+        opacity:0,
+    },
+    {
+        opacity:1,
+        translateY:'0'
+},3)
+courses_t1.fromTo('.wrap4',
+    {   
+        opacity:0,
+        translateX:'-500',
+
+    },
+    {  
+        translateX:'0',
+        opacity:1
+    },3)
+//stairs animation
+var stairs_t1=gsap.timeline({
+    // duration:10,
+    scrollTrigger:{
+        trigger:'.main-wrapper3',
+        start:"0% 10%",
+        end:"300% 100%",
+        markers:true,
+        pin:true,
+        ease:"sine",
+        // toggleActions:"restart pause restart complete",
+        scrub:true
+    }
+})
+stairs_t1.fromTo('.admission',{
+    translateX:'-1000',
+    opacity:0
+},{
+    translateX:'0',
+    opacity:1
+})
+stairs_t1.fromTo('.placement',{
+    translateX:'-1000',
+    opacity:0
+},{
+    translateX:'0',
+    opacity:1
+},1)
+stairs_t1.fromTo('.campus',{
+    translateX:'-1000',
+    opacity:0
+},{
+    translateX:'0',
+    opacity:1
+},2)
 
 //Menu-toggle
 const btn_burger = document.getElementById("btn");

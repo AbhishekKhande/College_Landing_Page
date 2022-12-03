@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 .over{
     /* overflow-x:scroll; 
@@ -233,16 +233,16 @@ body{
 } */
 .carousel-container{
     display:flex;
-    height: 50vh;
-    width: 500vw;
+    height: 100vh;
+    width: 1200vw;
     margin-top: 20vh;
     /* position: absolute;
     right:0vw;
     top:10vh */
 }
 .img-slider{
-    width: 50vw;
-    height:30vh;
+    width:100vw;
+    height:85vh;
     background-color: #43cea2;
     display: flex;
     margin:2vw;
@@ -478,9 +478,128 @@ body{
     z-index: 10000;
 }
 
-.main-wrapper{
-    height:300vh;
+.main-wrapper1{
+    height:100vh;
+    width:80vw;
+    margin:4.5rem 4.5rem;
+}
+.courses-div{
+    margin:8rem 2rem 8rem 5rem;
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 200px 200px 200px ;
+    grid-template-areas: "b a c"
+                          "d a f"
+                          "d e f"
+                          "d e f";
+
+}
+.courses{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-weight:bolder;
+    color: black;
+    font-family: Font1;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin:0.5rem;
+    border-radius: 10px;
+    background-color:rgb(240, 228, 228);
+    cursor: pointer;
+}
+a:link{
+    text-decoration: none!important;
+    color: black!important ;
+}
+
+.wrap1{
+    grid-area: a;
+}
+.wrap2{
+    grid-area: b;
+}
+.wrap3{
+    grid-area: c;
+}
+.wrap4{
+    grid-area: d;
+}
+.wrap5{
+    grid-area: e;
+}
+.wrap6{
+    grid-area: f;
+}
+.main-wrapper2{
+    height:80vh;
     width:100vw;
-    color: pink;
-    margin:1.5rem;
+    display:flex;
+}
+.enquiry{
+    height:70vh;
+    width:50vw;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: rgb(230, 245, 252);
+}
+.enquiry p{
+    font-size:2vw;
+    font-family:Font3;
+    margin: 1.2rem;;
+    width:fit-content;
+}
+.enquiry form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.enquiry form l{
+    font-size:1.5vw;
+    font-family: Font3;
+    margin-left: 1.6rem;
+    margin-top:1.5rem;
+}
+.enquiry form input{
+    height: 4vh;
+    margin: 0rem 2rem;
+    border-style: hidden;
+    border-bottom: 1px solid black;
+
+}
+.enquiry form button{
+    width: 10vw;
+    height: 8vh;
+    margin: 2rem auto;
+    border: 5px solid blue;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.main-wrapper3{
+    height: 100vh;
+    width: 100vw;
+    background-color: yellow;
+    padding: 1.2rem;
+}
+.study-info{
+    height: 25%;
+    width: 25%;
+    margin:2rem 2rem;
+    background-color: pink;
+    position: relative;
+}
+.admission{
+    left:2vw;
+}
+.placement{
+    left:30vw
+}
+.campus{
+    left:60vw;
+}
+.footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: gray;
 }
