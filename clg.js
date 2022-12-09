@@ -226,7 +226,7 @@ var courses_t1=gsap.timeline({
         pin:true,
         ease:"power.in",
         // toggleActions:"restart pause restart complete",
-        scrub:true
+        scrub:true,
     }
 })
 var wrap_div=document.querySelectorAll(".courses")
