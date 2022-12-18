@@ -6,10 +6,7 @@
 body{
     overflow-x: hidden;
 }
-.over{
-    /* overflow-x:scroll; 
-    overflow-y:hidden; */
-}
+
 @font-face {
     
     font-family: Font1;
@@ -20,7 +17,7 @@ body{
     src:url(font2.ttf);
 }
 @font-face {
-    font-family:Font3 ;
+    font-family: Font3 ;
     src:url(/College_Landing_Page/Slabo27px-Regular.ttf);
 }
 .logo-rel{
@@ -34,8 +31,8 @@ body{
 .wrapper-times-6{
     position: absolute;
     height: 10vh;
-    width: 85vw;
-    left: 15vw;
+    width: 81vw;
+    left: 19vw;
     top: 0vw;
     display: flex;
     justify-content: space-around;
@@ -78,6 +75,7 @@ body{
     border-radius: 0.3vw;
     position: absolute;
     z-index: 2000;
+    top: -0.2vw;
 }
 #btn{
     right: 4vw;
@@ -134,9 +132,10 @@ body{
 .vision{
     height: 20vh;
     width: 70vw;
-    left:0vw;
+    left: 0vw;
     position:absolute;
     color: white;
+    font-family: Font2;
     background: rgb(236,163,21);
     background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
     -webkit-background-clip:text;
@@ -148,6 +147,7 @@ body{
     left:0vw;
     position:inherit;
     top: 11vw;
+    font-family: Font2;     
     color: white;
     background: rgb(236,163,21);
     background: radial-gradient(circle, rgba(236,163,21,1) 10%, rgba(249,229,2,1) 94%);
@@ -245,8 +245,7 @@ body{
     height:85vh;
     background-color: #43cea2;
     display: flex;
-    margin:2vw;
-
+    margin: 2vw;
 }
 #cancel{
     height:20px;
@@ -268,15 +267,13 @@ body{
     text-transform:uppercase;
     line-height: 1.5;
     font-weight: bolder;
-    font:Font3;
-    letter-spacing: 1px;
-    background: #fe8c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip:text;
-	-webkit-text-fill-color:transparent;
-
+    font-family:Font2;
+    color: #EE99FF;
+    left: 5vw;
     /* background-color: cyan; */
+}
+.checkout span{
+    font-size: 4.5vw;
 }
 .icon{
     height: 10vh;
@@ -292,10 +289,8 @@ body{
     background: #000428;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     -webkit-background-clip:text;
 	-webkit-text-fill-color:transparent;
-
     position: relative;
     padding: 2vw;
     top:-3vw;
@@ -304,21 +299,22 @@ body{
     height: 10vh;
     width: 80vw;
     position: absolute;
-    left: 1vw;
-    top: 30vw;
+    left: 5vw;
+    top: 28vw;
     transform-origin: left;
     font-size: 3vw;
     text-transform:uppercase;
-    line-height: 1.5;
     font-weight: bolder;
-    font:Font3;
-    letter-spacing: 1px;
-    margin-left: 3rem;
-    background: #fe8c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip:text;
-	-webkit-text-fill-color:transparent
+    font-family:Font2;
+    color: #EE99FF;
+}
+.ScrollDown{
+    height: 10vh;
+    width: fit-content;
+    /* background-color: red; */
+}
+.capitalSpan{
+    font-size: 4.5vw;
 }
 .menu{
     font-size: 30px;
@@ -481,14 +477,26 @@ body{
 
 .main-wrapper1{
     height:100vh;
-    width:80vw;
-    margin:4.5rem 4.5rem;
+    width:100vw;
+    background: linear-gradient(to right, #4286f4, #373B44); 
+    
+}
+.delay2{
+    background-color: red;
+    height: 5vw;
+    width: 100vw;
 }
 .courses-div{
-    margin:8rem 2rem 8rem 5rem;
-    display:grid;
+    /* margin:8rem 2rem 8rem 5rem; */
+    height: 87%;
+    width: 86%;
+    position: absolute;
+    top: 45%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 200px 200px 200px ;
+    grid-template-rows: 15vw 15vh 15vw ;
     grid-template-areas: "b a c"
                           "d a f"
                           "d e f"
@@ -507,7 +515,7 @@ body{
     text-decoration: none;
     margin:0.5rem;
     border-radius: 10px;
-    background-color:rgb(240, 228, 228);
+    background-color: rgb(189 252 240 / 83%);
     cursor: pointer;
 }
 a:link{
@@ -533,6 +541,78 @@ a:link{
 .wrap6{
     grid-area: f;
 }
+
+.main-wrapper3{
+    height: 100vh;
+    width: 100vw;
+    padding: 1.2rem;
+    position: relative;
+    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
+}
+.study-info{
+    height: 25%;
+    width: 25%;
+    margin:2rem 2rem;
+    background-color: pink;
+    position: relative;
+}
+.admission{
+    left:2vw; 
+    background-color: #c0ebff;
+    border-radius: 4%;
+}
+.placement{
+    left:30vw;
+    background-color: #c0ebff;
+    border-radius: 4%;
+}
+.campus{
+    left:60vw;
+    background-color: #c0ebff;
+    border-radius: 4%;
+}
+.stairs_1{
+    height: 15%;
+    width: 51%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: unset;
+    border-radius: 15px;
+    z-index: 1;
+    font-weight: 1000;
+    font-size: 17px;
+    font-family: Font2;
+    transition: all 250ms;
+    overflow: hidden;
+    text-align: center;
+}
+
+.stairs_1::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 0%;
+border-radius: 15px;
+background-color: #212121;
+z-index: -1;
+transition: all 250ms;
+}
+   
+.stairs_1:hover {
+ color: #ffffff;
+}
+   
+.stairs_1:hover::before {
+ width: 100%;
+}
+.delay4{
+    height: 0px;
+    width: 100%;
+}
 .main-wrapper2{
     height:80vh;
     width:100vw;
@@ -543,11 +623,13 @@ a:link{
     width:50vw;
     border: 2px solid blue;
     border-radius: 5px;
+    font-family:Font2;
     background-color: rgb(230, 245, 252);
+    position: relative;
 }
 .enquiry p{
     font-size:2vw;
-    font-family:Font3;
+    font-family:Font2;
     margin: 1.2rem;;
     width:fit-content;
 }
@@ -558,16 +640,18 @@ a:link{
 }
 .enquiry form l{
     font-size:1.5vw;
-    font-family: Font3;
+    font-family: Font2;
     margin-left: 1.6rem;
     margin-top:1.5rem;
 }
-.enquiry form input{
-    height: 4vh;
-    margin: 0rem 2rem;
-    border-style: hidden;
-    border-bottom: 1px solid black;
-
+.enquiry form input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
 }
 .enquiry form button{
     width: 10vw;
@@ -577,27 +661,8 @@ a:link{
     border-radius: 10px;
     cursor:pointer;
 }
-.main-wrapper3{
-    height: 100vh;
-    width: 100vw;
-    background-color: yellow;
-    padding: 1.2rem;
-}
-.study-info{
-    height: 25%;
-    width: 25%;
-    margin:2rem 2rem;
-    background-color: pink;
-    position: relative;
-}
-.admission{
-    left:2vw;
-}
-.placement{
-    left:30vw
-}
-.campus{
-    left:60vw;
+button{
+    font-family: Font2;
 }
 .footer{
     height: 50vh;
