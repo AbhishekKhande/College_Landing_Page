@@ -243,9 +243,29 @@ body{
 .img-slider{
     width:100vw;
     height:85vh;
-    background-color: #43cea2;
+    /* background-color: #43cea2; */
     display: flex;
     margin: 2vw;
+}
+.img-slider:nth-child(1){
+    background-image: url('pexels-abby-chung-1106468.jpg');
+    background-size: contain;
+}
+.img-slider:nth-child(2){
+    background-image: url('pexels-andrea-piacquadio-927022.jpg');
+    background-size: contain;
+}
+.img-slider:nth-child(3){
+    background-image: url('pexels-christina-morillo-1181534.jpg');
+    background-size: contain;
+}
+.img-slider:nth-child(4){
+    background-image: url('pexels-min-an-771317.jpg');
+    background-size: cover;
+}
+.img-slider:nth-child(5){
+    background-image: url('pexels-filipe-sabino-2065490.jpg');
+    background-size: cover;
 }
 #cancel{
     height:20px;
@@ -531,9 +551,13 @@ a:link{
 }
 .wrap3{
     grid-area: c;
+    background-image: url('pexels-pixabay-247899.jpg');
+    background-size: contain;
 }
 .wrap4{
     grid-area: d;
+    background-image: url('pexels-oladimeji-ajegbile-2574619.jpg');
+    background-size: contain;
 }
 .wrap5{
     grid-area: e;

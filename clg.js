@@ -310,12 +310,15 @@ courses_t1.fromTo('.wrap4',
         translateX:'0',
         opacity:1
     },3)
-    // .fromTo('.delay2',
-    // {
-    //     translateX:'0%'
-    // },{
-    //     translateX:'100%'
-    // },4)
+
+// const offered = document.getElementById('offered_id')
+// const wrap1 = document.getElementById('offered')
+// wrap1.addEventListener('mouseover',()=>{
+//     offered.style.display = 'block';
+// })
+// wrap1.addEventListener('mouseout',()=>{
+//     offered.style.display = 'none';
+// })
 //stairs animation
 var stairs_t1=gsap.timeline({
     // duration:10,
