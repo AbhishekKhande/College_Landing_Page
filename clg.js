@@ -49,7 +49,7 @@ let t1=gsap.timeline(
         scrollTrigger:{
             trigger:".dark-bg",
             start:"10% 9.5%",
-            end:"80% bottom",
+            end:"150% bottom",
             pin:true,
             //pinSpacing:false,
             scrub:true,
@@ -93,8 +93,8 @@ t1.fromTo('.img-right',
 var checkout_tl = gsap.timeline({
         scrollTrigger:{
         trigger:'.dark-bg',
-        start:'40% 20%',
-        end:'90% bottom',
+        start:'40% 15%',
+        end:'300% bottom',
         pin:true,
        // pinSpacing:false,
         //toggleActions:'restart complete restart complete',
@@ -138,6 +138,32 @@ checkout_tl.fromTo(".checkout-container",
 },{
     scaleX:1,
 },3)
+.fromTo('.ScrollDown',{
+    opacity:0,
+},{
+    opacity:1,
+},4)
+
+.fromTo('#arrow',
+{
+    rotation: 0,
+},
+{
+    rotation: 90,
+},6)
+.fromTo('.ScrollDown',{
+    translateX: '0vw',    
+},{
+    translateX: '30vw',    
+    color: '#1333b4'
+},5)
+.fromTo('.checkout',
+{
+    
+},
+{
+    color:'#1333b4',
+},5)
 
 //the image slider 
 let container=document.querySelector('.carousel-container');
@@ -151,15 +177,13 @@ var ani=ghost_t2.to(image,{
     scrollTrigger:{
         trigger:'.dark-bg',
         start:'70% 20%',
-        end: () => "+=" + container.offsetWidth + "px",
+        end: '450% bottom',
         pin:true,
-        ease:"power.in",
-        scrub:0.1,
-        // markers:true
+        scrub:0.5,
     }
 })
 
-ani.fromTo(".box1",{rotate:0},{rotate:360})
+// ani.fromTo(".box1",{rotate:0},{rotate:360})
 // ani.to(".box1", {
 //     rotate:360,
 //     duration: 2,
@@ -217,16 +241,16 @@ ani.fromTo(".box1",{rotate:0},{rotate:360})
 
 //this is for courses div
 var courses_t1=gsap.timeline({
-    // duration:10,
+    
     scrollTrigger:{
         trigger:'.main-wrapper1',
-        start:"0% -10%",
-        end:"300% 100%",
+        start:"0% 10%",
+        end:"1000% 40%",
         markers:true,
         pin:true,
         ease:"power.in",
         // toggleActions:"restart pause restart complete",
-        scrub:true,
+        scrub:0.5,
     }
 })
 var wrap_div=document.querySelectorAll(".courses")
@@ -286,18 +310,27 @@ courses_t1.fromTo('.wrap4',
         translateX:'0',
         opacity:1
     },3)
+
+// const offered = document.getElementById('offered_id')
+// const wrap1 = document.getElementById('offered')
+// wrap1.addEventListener('mouseover',()=>{
+//     offered.style.display = 'block';
+// })
+// wrap1.addEventListener('mouseout',()=>{
+//     offered.style.display = 'none';
+// })
 //stairs animation
 var stairs_t1=gsap.timeline({
     // duration:10,
     scrollTrigger:{
         trigger:'.main-wrapper3',
-        start:"0% 10%",
-        end:"300% 100%",
-        markers:true,
+        start:"5% 10%",
+        end:"400% 40%",
+        // markers:true,
         pin:true,
-        ease:"sine",
+        // ease:"sine",
         // toggleActions:"restart pause restart complete",
-        scrub:true
+        scrub:0.6
     }
 })
 stairs_t1.fromTo('.admission',{
@@ -306,21 +339,49 @@ stairs_t1.fromTo('.admission',{
 },{
     translateX:'0',
     opacity:1
-})
+},0)
 stairs_t1.fromTo('.placement',{
     translateX:'-1000',
     opacity:0
 },{
-    translateX:'0',
-    opacity:1
+    translateX:'-500',
+    opacity:0.5
 },1)
-stairs_t1.fromTo('.campus',{
-    translateX:'-1000',
-    opacity:0
+stairs_t1.fromTo('.placement',{
+    translateX:'-500',
+    opacity:0.5
 },{
     translateX:'0',
     opacity:1
 },2)
+stairs_t1.fromTo('.campus',{
+    translateX:'-1000',
+    opacity:0
+},{
+    translateX:'-500',
+    opacity:0.5
+},3)
+stairs_t1.fromTo('.campus',{
+    translateX:'-500',
+    opacity:0.5
+},{
+    translateX:'0',
+    opacity:1
+},4)
+stairs_t1.fromTo('.delay4',{
+    translateX:'0%',
+    opacity:0
+},{
+    translateX:'50%',
+    opacity:0
+},5)
+stairs_t1.fromTo('.delay4',{
+    translateX:'50%',
+    opacity:0
+},{
+    translateX:'5100%',
+    opacity:0
+},5)
 
 //Menu-toggle
 const btn_burger = document.getElementById("btn");
