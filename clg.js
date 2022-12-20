@@ -246,7 +246,7 @@ var courses_t1=gsap.timeline({
         trigger:'.main-wrapper1',
         start:"0% 10%",
         end:"1000% 40%",
-        markers:true,
+        // markers:true,
         pin:true,
         ease:"power.in",
         // toggleActions:"restart pause restart complete",
